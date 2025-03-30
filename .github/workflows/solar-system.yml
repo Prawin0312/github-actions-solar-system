@@ -98,5 +98,5 @@ jobs:
               kubeconfig: '${{ secrets.KUBECONFIG }}'
               context: c
           
-          - name: Verifying the version , Working
+          - name: Verifying the version , Working Haha
             run: kubectl version -o yaml
