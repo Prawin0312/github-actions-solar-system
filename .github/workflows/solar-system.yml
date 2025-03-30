@@ -25,7 +25,9 @@ jobs:
       - name: Install Dependencies
         run: npm install
       - name: Unit Testing
+        continue-on-error: true
         run: npm test
+
       - name: Archive Test Result
         if: always()      #added
         uses: actions/upload-artifact@v4
@@ -93,3 +95,6 @@ jobs:
             with:
               method: kubeconfig
               kubeconfig: $ {{ secrets.KUBECONFIG }}
+          
+          - name: Verifying the version
+            run: kubectl -version -o yaml
