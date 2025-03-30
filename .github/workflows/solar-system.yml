@@ -88,10 +88,7 @@ jobs:
       - uses: azure/setup-kubectl@v4
         with:
           version: v1.31.0   
-      - uses: azure/k8s-set-context@v4
-        with:
-         method: kubeconfig
-         kubeconfig: ${{ vars.KUBECONFIG }}
+      - run: export KUBECONFIG= ${{ vars.KUBECONFIG }}
       - run: kubectl config view
       - run: kubectl config current-context 
       - name: THAT'S IT
