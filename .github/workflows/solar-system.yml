@@ -92,6 +92,7 @@ jobs:
         with:
           method: kubeconfig
           kubeconfig: ${{ secrets.KUBECONFIG }}
-          context: default
+      - name: Echo Kubeconfig    
+        run: echo "${{ secrets.KUBECONFIG }}"
       - name: THAT'S IT
         run: kubectl version -o yaml
