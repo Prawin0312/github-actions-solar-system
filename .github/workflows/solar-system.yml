@@ -92,8 +92,7 @@ jobs:
         with:
          method: kubeconfig
          kubeconfig: ${{ vars.KUBECONFIG }}
-      - run: |
-           kubectl config view
-           kubectl config current-context   
+      - run: kubectl config view
+      - run: kubectl config current-context 
       - name: THAT'S IT
         run: kubectl version -o yaml
