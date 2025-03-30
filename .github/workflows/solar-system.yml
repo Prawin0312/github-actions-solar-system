@@ -88,9 +88,9 @@ jobs:
       - uses: azure/setup-kubectl@v4
         with:
           version: v1.31.0   
-      - run: export KUBECONFIG='${{ vars.KUBECONFIG }}'
-      - run: kubectl config view
-      - run: kubectl config use-context default
-      - run: kubectl config current-context 
-      - name: THAT'S IT
-        run: kubectl version -o yaml
+      - uses: azure/k8s-set-context@v4
+        with:
+            method: kubeconfig
+            kubeconfig: $ {{ vars.KUBECONFIG }}
+            context: default # current-context from kubeconfig is used as default       
+      - run: kubectl version -o yaml
