@@ -90,6 +90,7 @@ jobs:
           version: v1.31.0   
       - run: export KUBECONFIG='${{ vars.KUBECONFIG }}'
       - run: kubectl config view
+      - run: kubectl config use-context default
       - run: kubectl config current-context 
       - name: THAT'S IT
         run: kubectl version -o yaml
