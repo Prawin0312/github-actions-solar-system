@@ -92,4 +92,5 @@ jobs:
         with:
           method: kubeconfig
           kubeconfig: '${{ secrets.KUBECONFIG }}'
+        name: THAT'S ITTTTT
       - run: kubectl version -o yaml
