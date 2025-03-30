@@ -91,8 +91,8 @@ jobs:
       - uses: azure/k8s-set-context@v4
         with:
           method: kubeconfig
-          kubeconfig: ${{ secrets.KUBECONFIG }}
+          kubeconfig: ${{ vars.KUBECONFIG }}
       - name: Echo Kubeconfig    
-        run: echo "${{ secrets.KUBECONFIG }}"
+        run: echo "${{ vars.rets.KUBECONFIG }}"
       - name: THAT'S IT
         run: kubectl version -o yaml
