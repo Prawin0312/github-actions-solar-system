@@ -92,7 +92,7 @@ jobs:
         with:
           method: kubeconfig
           kubeconfig: ${{ vars.KUBECONFIG }}
-      - name: Echo Kubeconfig    
-        run: echo ${{ vars.KUBECONFIG }}
+      # - name: Echo Kubeconfig    
+      #   run: echo ${{ vars.KUBECONFIG }}
       - name: THAT'S IT
         run: kubectl version -o yaml
