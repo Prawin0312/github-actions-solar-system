@@ -98,4 +98,4 @@ jobs:
               kubeconfig: '${{ secrets.KUBECONFIG }}'
           
           - name: Verifying the version , Working Haha
-            run: kubectl version -o yaml
+            run: kubectl version --short
