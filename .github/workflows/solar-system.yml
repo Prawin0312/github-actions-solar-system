@@ -93,5 +93,5 @@ jobs:
           method: kubeconfig
           kubeconfig: '${{ secrets.KUBECONFIG }}'
           context: default
-        name: THAT'S ITTTTT
-      - run: kubectl version -o yaml
+      - name: THAT'S ITTTTT
+        run: kubectl version -o yaml
